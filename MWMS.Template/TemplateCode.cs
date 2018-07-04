@@ -51,7 +51,7 @@ namespace MWMS
 
             TemplateServiceConfiguration templateConfig = new TemplateServiceConfiguration
             {
-                CatchPath = HttpContext.Current.Server.MapPath("~" + Config.cachePath + "assembly/")
+                CatchPath = Request.MapPath("~" + Config.cachePath + "assembly/")
             };
             Razor.SetTemplateService(new TemplateService(templateConfig));
             _html = "@using System.Collections\r\n@{ Dictionary<string, string> sys=( Dictionary<string, string>)Model[0];Dictionary<string, object> page=( Dictionary<string, object>)Model[1];var loginUser=(new LoginInfo()).value;}" + _html;
