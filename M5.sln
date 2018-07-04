@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M5", "M5\M5.csproj", "{5AB69CD9-FAB0-4A3E-8E89-D9F7D879A71F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M5", "M5\M5.csproj", "{5AB69CD9-FAB0-4A3E-8E89-D9F7D879A71F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MWMS", "MWMS", "{29DEA74E-421E-4593-A565-670017367E4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MWMS.Template", "MWMS.Template\MWMS.Template.csproj", "{CC65D0FB-5AD9-4B9C-804F-218096C6AB08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MWMS.Template", "MWMS.Template\MWMS.Template.csproj", "{CC65D0FB-5AD9-4B9C-804F-218096C6AB08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorEngine.Core", "RazorEngine\RazorEngine.Core\RazorEngine.Core.csproj", "{4B6DDE24-50A4-4545-BABC-32F0A5FE9BAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Web.Razor", "RazorEngine\System.Web.Razor\System.Web.Razor.csproj", "{881F3FD2-0341-415C-8312-991513D20D3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MWMS.Common", "MWMS.Common\MWMS.Common.csproj", "{7A38A09B-2D35-40E5-8D0C-F59973457FBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +29,27 @@ Global
 		{CC65D0FB-5AD9-4B9C-804F-218096C6AB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC65D0FB-5AD9-4B9C-804F-218096C6AB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC65D0FB-5AD9-4B9C-804F-218096C6AB08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B6DDE24-50A4-4545-BABC-32F0A5FE9BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B6DDE24-50A4-4545-BABC-32F0A5FE9BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B6DDE24-50A4-4545-BABC-32F0A5FE9BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B6DDE24-50A4-4545-BABC-32F0A5FE9BAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{881F3FD2-0341-415C-8312-991513D20D3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{881F3FD2-0341-415C-8312-991513D20D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{881F3FD2-0341-415C-8312-991513D20D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{881F3FD2-0341-415C-8312-991513D20D3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A38A09B-2D35-40E5-8D0C-F59973457FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A38A09B-2D35-40E5-8D0C-F59973457FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A38A09B-2D35-40E5-8D0C-F59973457FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A38A09B-2D35-40E5-8D0C-F59973457FBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CC65D0FB-5AD9-4B9C-804F-218096C6AB08} = {29DEA74E-421E-4593-A565-670017367E4F}
+		{4B6DDE24-50A4-4545-BABC-32F0A5FE9BAF} = {29DEA74E-421E-4593-A565-670017367E4F}
+		{881F3FD2-0341-415C-8312-991513D20D3B} = {29DEA74E-421E-4593-A565-670017367E4F}
+		{7A38A09B-2D35-40E5-8D0C-F59973457FBD} = {29DEA74E-421E-4593-A565-670017367E4F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B09C79E7-57DD-4DF7-ABE3-BB945B6DD0D8}
