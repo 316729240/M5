@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RazorEngine\RazorEngine.Core\RazorEngine.Core.csproj" />
+    <ProjectReference Include="..\MWMS.DataExtensions\MWMS.DataExtensions.csproj" />
+    <ProjectReference Include="..\SqlHelper\MWMS.SqlHelper.csproj" />
   </ItemGroup>
 
 </Project>

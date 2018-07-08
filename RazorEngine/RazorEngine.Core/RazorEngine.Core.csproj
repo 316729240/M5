@@ -106,10 +106,6 @@
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Helper\MWMS.Helper.csproj">
-      <Project>{fccfb5a1-a771-49cc-ac13-3500c4cde9f1}</Project>
-      <Name>MWMS.Helper</Name>
-    </ProjectReference>
     <ProjectReference Include="..\System.Web.Razor\System.Web.Razor.csproj">
       <Project>{881f3fd2-0341-415c-8312-991513d20d3b}</Project>
       <Name>System.Web.Razor</Name>

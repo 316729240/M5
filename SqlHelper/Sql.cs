@@ -26,7 +26,7 @@ using System.Data.OleDb;
 using System.Collections;
 using System.Configuration;
 using System.Collections.Generic;
-namespace MWMS.Helper
+namespace MWMS.SqlHelper
 {
 	/// <summary>
 	/// The SqlHelper class is intended to encapsulate high performance, scalable best practices for 
@@ -71,24 +71,6 @@ namespace MWMS.Helper
 				command.Parameters.Add(p);
 			}
 		}
-		/// <summary>
-		/// Oledb
-		/// </summary>
-		/// <param name="command"></param>
-		/// <param name="commandParameters"></param>
-		private static void AttachParameters(OleDbCommand command,OleDbParameter[] commandParameters)
-		{
-			foreach (OleDbParameter p in commandParameters)
-			{
-				//check for derived output value with no value assigned
-				if ((p.Direction == ParameterDirection.InputOutput) && (p.Value == null))
-				{
-					p.Value = DBNull.Value;
-				}
-				
-				command.Parameters.Add(p);
-			}
-		}
 
 		/// <summary>
 		/// This method assigns an array of values to an array of SqlParameters.
@@ -117,32 +99,6 @@ namespace MWMS.Helper
 			}
 		}
 
-		/// <summary>
-		/// OleDb
-		/// </summary>
-		/// <param name="commandParameters"></param>
-		/// <param name="parameterValues"></param>
-		private static void AssignParameterValues(OleDbParameter[] commandParameters, object[] parameterValues)
-		{
-			if ((commandParameters == null) || (parameterValues == null)) 
-			{
-				//do nothing if we get no data
-				return;
-			}
-
-			// we must have the same number of values as we pave parameters to put them in
-			if (commandParameters.Length != parameterValues.Length)
-			{
-				throw new ArgumentException("Parameter count does not match Parameter Value count.");
-			}
-
-			//iterate through the SqlParameters, assigning the values from the corresponding position in the 
-			//value array
-			for (int i = 0, j = commandParameters.Length; i < j; i++)
-			{
-				commandParameters[i].Value = parameterValues[i];
-			}
-		}
 		/// <summary>
 		/// This method opens (if necessary) and assigns a connection, transaction, command type and parameters 
 		/// to the provided command.

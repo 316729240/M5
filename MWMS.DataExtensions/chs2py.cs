@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MWMS.Helper{
+namespace MWMS.DataExtensions
+{
     #region 汉字拼音读取
     public class Chs2py
     {/// 

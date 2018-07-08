@@ -8,14 +8,40 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Xml;
 using System.Text.RegularExpressions;
-namespace MWMS.Helper
+namespace MWMS.DataExtensions
 {
 
     public static class ObjectExtensions
     {
+        static string GetString(string str, int count)
+        {
+            string value = "";
+            if (count == 0)
+            {
+                return (str);
+            }
+            char v;
+            int n1 = 0;
+            string str1 = "", str2 = "";
+            for (int n = 0; n < str.Length; n++)
+            {
+                v = char.Parse(str.Substring(n, 1));
+                if (v >= 0 && v <= 255)
+                {
+                    n1 = n1 + 1;
+                }
+                else { n1 = n1 + 2; }
+                str1 = str1 + v;
+                if (n1 >= count) { n = str.Length + 1; }
+                if (n1 == count - 2 || n1 == count - 1) { str2 = str1; }
+            }
+            if (str1 == str) { value = str; }
+            else { value = str2 + "..."; }
+            return (value);
+        }
         public static string Left(this string text, int count)
         {
-            return Tools.GetString(text.RemoveHtml(), count).String;
+            return GetString(text.RemoveHtml(), count);
         }
         #region 取得HTML中字段项的值
         public static string GetHTMLValue(this string HTML, string FieldName)
@@ -120,7 +146,14 @@ namespace MWMS.Helper
         }
         public static string MD5(this string Str)
         {
-            return (System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(Str, "sha1"));
+            MD5CryptoServiceProvider md5Hasher = new MD5CryptoServiceProvider();
+            byte[] data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(Str));
+            StringBuilder sBuilder = new StringBuilder();
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+            return sBuilder.ToString();
         }
         //解密函数
         public static string Decryption(this string A_0, string A_1)

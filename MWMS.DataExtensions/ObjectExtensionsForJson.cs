@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web.Script.Serialization;
 using System.Xml;
 
-namespace MWMS.Helper
+namespace MWMS.DataExtensions
 {
     public static class ObjectExtensionsForJson
     {
